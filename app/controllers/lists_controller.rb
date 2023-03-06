@@ -5,9 +5,13 @@ class ListsController < ApplicationController
   end
   
   def create
-    list = List.new(list_params)
-    list.save
-    redirect_to root_path
+    @list = List.new(list_params)
+    if @list.save
+      flash[:notice] = "投稿しました"
+      redirect_to lists_path
+    else
+      render :new
+    end
   end
   
   def index
@@ -23,14 +27,19 @@ class ListsController < ApplicationController
   end
   
   def update
-    list = List.find(params[:id])
-    list.update(list_params)
-    redirect_to show_list_path(list)
+    @list = List.find(params[:id])
+    if @list.update(list_params)
+      flash[:notice] = "更新しました"
+      redirect_to show_list_path(@list)
+    else
+      render :edit
+    end
   end
   
   def destroy
     list = List.find(params[:id])
     list.destroy
+    flash[:notice] = "削除しました。"
     redirect_to lists_path
   end
   

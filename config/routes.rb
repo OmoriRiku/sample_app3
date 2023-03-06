@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'homes#top'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get 'lists/new' => 'lists#new'
+  get 'lists/new' => 'lists#new', as: 'new_list'
   post 'lists' => 'lists#create'
   get 'lists' => 'lists#index'
   get 'lists/:id' => 'lists#show', as: 'show_list'

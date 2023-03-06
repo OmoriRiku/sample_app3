@@ -1,3 +1,4 @@
+<p><%= flash[:notice] %></p>
 <h2>投稿一覧</h2>
 
 <% @list.each do |list| %>
@@ -5,11 +6,7 @@
   <small><%= link_to list.title, show_list_path(list) %></small>
   
   <h3>画像</h3>
-  <% if list.image.attached? %>
-    <%= image_tag list.image, size: "200x200" %>
-  <% else %>
-    <%= image_tag 'no_image', size: "200x200" %>
-  <% end %>
+  <%= image_tag list.image, size: "200x200" %>
   
   <%= link_to '削除する', destroy_list_path(list), method: :delete %>
 <% end %>
