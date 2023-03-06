@@ -55,16 +55,27 @@
   display: block;
 }
 
+.mb-1 {
+  margin-bottom: 10px;
+}
+
 .mb-2 {
   margin-bottom: 20px;
 }
 
 .list-box {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .list-box-item {
   margin-right: 50px;
+}
+
+.list-box-item:nth-of-type(4n) {
+  margin-right: 0px;
 }
 
 .list-title {
