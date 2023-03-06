@@ -1,0 +1,11 @@
+<h2>新規投稿</h2>
+
+<%= form_with model: @list do |f| %>
+  <%= f.label :title, class: "d-block mb-2" %>
+  <%= f.text_field :title, class: "d-block, mb-2" %>
+  <%= f.label :body, class: "d-block mb-2" %>
+  <%= f.text_area :body, class: "d-block mb-2" %>
+  <%= f.label :image, class: "d-block mb-2" %>
+  <%= f.file_field :image, accept: 'image/*', class: "d-block mb-2" %>
+  <%= f.submit '投稿する' %>
+<% end %>
