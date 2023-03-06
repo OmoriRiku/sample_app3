@@ -1,0 +1,15 @@
+<p class="mb-2"><%= flash[:notice] %></p>
+<h2 class="mb-2">投稿一覧</h2>
+<div class="list-box">
+
+  <% lists.each do |list| %>
+    <div class="list-box-item">
+      <h3 class="mb-2">タイトル</h3>
+      <small class="list-title d-block mb-2"><%= link_to list.title, show_list_path(list) %></small>
+      <h3 class="mb-2">画像</h3>
+      <%= image_tag list.image, size: "200x200" %>
+      <p><%= link_to '削除する', destroy_list_path(list), method: :delete %></p>
+    </div>
+  <% end %>
+  
+</div>

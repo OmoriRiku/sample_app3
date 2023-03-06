@@ -1,9 +1,9 @@
-<p><%= flash[:notice] %></p>
-<h3>タイトル</h3>
-<%= @list.title %>
-<h3>本文</h3>
-<%= @list.body %>
-<h3>投稿画像</h3>
+<p class="mb-2"><%= flash[:notice] %></p>
+<h3 class="mb-2">タイトル</h3>
+<p class="d-block mb-2"><%= @list.title %></p>
+<h3 class="mb-2">本文</h3>
+<p class="d-block mb-2"><%= @list.body %></p>
+<h3 class="mb-2">投稿画像</h3>
 <%= image_tag @list.image, size: "300x300" %>
 
 <p><%= link_to "編集する", edit_list_path(@list) %></p>

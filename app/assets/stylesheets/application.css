@@ -13,10 +13,60 @@
  *= require_tree .
  *= require_self
  */
+ 
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ 
+ a {
+   color: #000;
+   text-decoration: none;
+ }
+ 
+ .container {
+   max-width: 1024px;
+   margin: 0 auto;
+ }
+ 
+ .header {
+   display: flex;
+   justify-content: space-between;
+   height: 60px;
+   line-height: 60px;
+   margin-bottom: 20px;
+ }
+ 
+ .nav {
+   display: flex;
+ }
+ 
+ .nav-list {
+   list-style: none;
+   padding: 0 20px;
+ }
+ 
+ .nav-list:last-of-type {
+   padding-right: 0px;
+ }
+ 
 .d-block {
   display: block;
 }
 
 .mb-2 {
   margin-bottom: 20px;
+}
+
+.list-box {
+  display: flex;
+}
+
+.list-box-item {
+  margin-right: 50px;
+}
+
+.list-title {
+  font-size: 16px;
 }
